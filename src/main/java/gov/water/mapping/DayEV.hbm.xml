@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="gov.water.model.DayEV" 
+    table="ST_DAYEV_R"
+>
+
+    <composite-id name="daypk" class="gov.water.model.DayPK">
+   		<key-property name="stcd"></key-property>
+   		<key-property name="tm"></key-property>
+  	</composite-id>
+
+    <property
+        name="eptp"
+        type="java.lang.String"
+        column="eptp"
+        length="1"
+    />
+    <property
+        name="dye"
+        type="java.lang.Float"
+        column="dye"
+    />
+
+</class>
+</hibernate-mapping>

@@ -41,7 +41,7 @@
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
 						<div class="fieldset post-wrapper">
-							<h2 class="corpcolor-font"><span>蒸发量报送 - ${station}站</span></h2>
+							<h2 class="corpcolor-font"><span>蒸发量报送 - ${stnm}站</span></h2>
 							<form method="post">
 								<table>
 									<tbody>
@@ -49,13 +49,16 @@
 											<td>前日蒸发量</td>
 										</tr>
 										<tr>
-											<td class="yesterday-data">126</td>
+											<td class="yesterday-data">${dye}</td>
 										</tr>
 										<tr>
 											<td>昨日蒸发量</td>
 										</tr>
 										<tr>
-											<td><input type="number" id="user_password" name="user_password" class="form-control input-sm required" placeholder="昨日蒸发量" value="" /></td>
+											<td>
+												<input type="hidden" name="stcd" value="${stcd}" />
+												<input type="number" min="0" step="0.1" name="dye" class="form-control input-sm required" placeholder="昨日蒸发量" />
+											</td>
 										</tr>
 										<tr>
 											<td><button type="submit" class="btn-login btn btn-sm btn-primary pull-right"><i class="glyphicon glyphicon-send"></i> 提交</button></td>
