@@ -13,33 +13,35 @@
 
 	<body>
 		<div class="login-area">
-			<h2 class="title-wrapper"><span>æ±è¥¿çæ°´æå±è¸åéæ¥è¯¢æ¥éç³»ç»</span></h2>
-			<div class="error">ddd</div>
+			<h2 class="title-wrapper"><span>江西省水文局蒸发量查询报送系统</span></h2>
+			<c:if test="${error != null}">
+			<div class="error">${error}</div>
+			</c:if>
 			<div class="container-fluid">
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
 						<div class="fieldset">
-							<h2 class="corpcolor-font"><span>ç¨æ·ç»å½</span></h2>
+							<h2 class="corpcolor-font"><span>用户登录</span></h2>
 							<form method="post">
 								<table>
 									<tbody>
 										<tr>
-											<td>ç¨æ·å</td>
+											<td>用户名</td>
 										</tr>
 										<tr>
-											<td><input type="text" id="user_username" name="user_username" class="form-control input-sm required" placeholder="ç¨æ·å" value="" /></td>
+											<td><input type="text" name="user_stcd" class="form-control input-sm required" placeholder="用户名" value="" /></td>
 										</tr>
 										<tr>
-											<td>å¯ç </td>
+											<td>密码</td>
 										</tr>
 										<tr>
-											<td><input type="password" id="user_password" name="user_password" class="form-control input-sm required" placeholder="å¯ç " value="" /></td>
+											<td><input type="password" name="user_psd" class="form-control input-sm required" placeholder="密码" value="" /></td>
 										</tr>
 										<tr>
-											<td><input type="checkbox" name="user_password" class=""/> è®°ä½æ</td>
+											<td><input type="checkbox" name="user_auto" class=""/> 记住该账户</td>
 										</tr>
 										<tr>
-											<td><button type="submit" class="btn-login btn btn-sm btn-primary pull-right"><i class="glyphicon glyphicon-send"></i> ç»å½</button></td>
+											<td><button type="submit" class="btn-login btn btn-sm btn-primary pull-right"><i class="glyphicon glyphicon-send"></i> 登录</button></td>
 										</tr>
 									</tbody>
 								</table>

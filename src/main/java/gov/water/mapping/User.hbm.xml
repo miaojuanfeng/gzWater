@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="gov.water.model.User" 
+    table="zf_Users"
+>
+
+    <id
+        name="stcd"
+        type="java.lang.String"
+        column="stcd"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="stnm"
+        type="java.lang.String"
+        column="stnm"
+        not-null="true"
+        length="10"
+    />
+    <property
+        name="psd"
+        type="java.lang.String"
+        column="psd"
+        not-null="true"
+        length="255"
+    />
+
+</class>
+</hibernate-mapping>

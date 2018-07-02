@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import gov.water.model.User;
+
 public class LoginFilter implements Filter{
 	
 	private List<String> exceptPath;
@@ -33,12 +35,12 @@ public class LoginFilter implements Filter{
 		}
 		
 		HttpSession httpSession = httpRequest.getSession();
-		/*User user = (User)httpSession.getAttribute("user"); */
-		if( true ){
-			httpResponse.sendRedirect(httpRequest.getContextPath()+"/cms/user/login");
-		}else{
+		User user = (User)httpSession.getAttribute("user");
+		//if( user == null ){
+		//	httpResponse.sendRedirect(httpRequest.getContextPath()+"/login");
+		//}else{
 			chain.doFilter(httpRequest, httpResponse);
-		}
+		//}
 	}
 
 	public void init(FilterConfig filterConfig) throws ServletException {

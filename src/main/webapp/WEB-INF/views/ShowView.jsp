@@ -1,4 +1,5 @@
-
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -7,66 +8,45 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<link rel="stylesheet" href="assets/css/jquery-ui.css">
-		<link rel="stylesheet" href="assets/css/bootstrap.css">
-		<link rel="stylesheet" href="assets/css/chosen.css">
-		<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.css">
-		<link rel="stylesheet" href="assets/css/style.css" media="all">
-		<link rel="stylesheet" href="assets/css/login.css">
-
-		
-		<script src="assets/js/jquery-1.11.3.min.js"></script>
-		<script src="assets/js/jquery-ui.js"></script>
-		<script src="assets/js/jquery-ui.multidatespicker.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/chosen.jquery.js"></script>
-		<script src="assets/js/jquery.maskedinput.js"></script>
-		<script src="assets/js/accounting.min.js"></script>
-		<script src="assets/js/jquery.validate.js"></script>
-		<script src="assets/js/additional-methods.min.js"></script>
-		<script src="assets/js/echarts.min.js"></script>
-		<script src="assets/js/moment.js"></script>
-		<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-		<script src="assets/js/function.js"></script>
-
+		<%@ include file="inc/headArea.jsp" %>
 	</head>
 
 	<body>
 		<div class="login-area">
-			<h2 class="title-wrapper"><span>江西省水文局蒸发量查询报送系统</span></h2>
+			<h2 class="title-wrapper"><span>江西省水文局蒸发量查询报送系统</span></h2>
 			<div class="container-fluid menu-wrapper">
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
 						<div class="fieldset show-wrapper">
-							<h2 class="corpcolor-font"><span>导航菜单</span></h2>
+							<h2 class="corpcolor-font"><span>导航菜单</span></h2>
 							<div class="row">
+								<!-- div class="no-margin-top col-sm-4 col-xs-12">
+									<a class="btn btn-sm btn-primary" href="asd">è¸åéæ¥è¯¢</a>
+								</div-->
 								<div class="no-margin-top col-sm-4 col-xs-12">
-									<a class="btn btn-sm btn-primary" href="asd">蒸发量查询</a>
+									<a class="btn btn-sm btn-primary" href="<c:url value="/post"></c:url>">蒸发量报送</a>
 								</div>
 								<div class="no-margin-top col-sm-4 col-xs-12">
-									<a class="btn btn-sm btn-primary" href="asd">蒸发量报送</a>
-								</div>
-								<div class="no-margin-top col-sm-4 col-xs-12">
-									<a class="btn btn-sm btn-primary" href="asd">退出登录</a>
+									<a class="btn btn-sm btn-primary" href="<c:url value="/logout"></c:url>">退出登录</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="error">错误：</div>
+			<div class="error">éè¯¯ï¼</div>
 			<div class="container-fluid">
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
 						<div class="fieldset show-wrapper">
-							<h2 class="corpcolor-font"><span>蒸发量查询 - 茶芫站</span></h2>
+							<h2 class="corpcolor-font"><span>蒸发量查询 - 某某站台</span></h2>
 							<form method="post">
 								<table>
 									<tbody>
 										<tr>
 											<td>
 												<span class="input-group date datetimepicker">
-													<input id="invoice_create_greateq" name="invoice_create_greateq" type="text" class="form-control input-sm date-mask valid" placeholder="开始日期 (YYYY-MM-DD)">
+													<input id="invoice_create_greateq" name="invoice_create_greateq" type="text" class="form-control input-sm date-mask valid" placeholder="开始日期 (YYYY-MM-DD)">
 													<span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
@@ -76,7 +56,7 @@
 										<tr>
 											<td>
 												<span class="input-group date datetimepicker">
-													<input id="invoice_create_greateq" name="invoice_create_greateq" type="text" class="form-control input-sm date-mask valid" placeholder="结束日期 (YYYY-MM-DD)">
+													<input id="invoice_create_greateq" name="invoice_create_greateq" type="text" class="form-control input-sm date-mask valid" placeholder="结束日期 (YYYY-MM-DD)">
 													<span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
@@ -96,7 +76,7 @@
 										<tr>
 											<th class="th-date">日期</td>
 											<th class="th-time">时间</td>
-											<th class="th-data">蒸发量</td>
+											<th class="th-data">蒸发量</td>
 										</tr>
 										<tr>
 											<td class="th-date">2018-06-30</td>
@@ -129,11 +109,6 @@
 											<td class="th-data">93.8</td>
 										</tr>
 										<tr>
-											<th class="th-date">日期</td>
-											<th class="th-time">时间</td>
-											<th class="th-data">数值</td>
-										</tr>
-										<tr>
 											<td class="th-date">2018-06-30</td>
 											<td class="th-time">08:00</td>
 											<td class="th-data">123.2</td>
@@ -164,11 +139,6 @@
 											<td class="th-data">93.8</td>
 										</tr>
 										<tr>
-											<th class="th-date">日期</td>
-											<th class="th-time">时间</td>
-											<th class="th-data">数值</td>
-										</tr>
-										<tr>
 											<td class="th-date">2018-06-30</td>
 											<td class="th-time">08:00</td>
 											<td class="th-data">123.2</td>
@@ -197,11 +167,6 @@
 											<td class="th-date">2018-06-25</td>
 											<td class="th-time">08:00</td>
 											<td class="th-data">93.8</td>
-										</tr>
-										<tr>
-											<th class="th-date">日期</td>
-											<th class="th-time">时间</td>
-											<th class="th-data">数值</td>
 										</tr>
 										<tr>
 											<td class="th-date">2018-06-30</td>
