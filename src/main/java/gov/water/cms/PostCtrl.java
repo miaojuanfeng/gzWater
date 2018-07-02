@@ -13,8 +13,22 @@ import gov.water.model.User;
 @Controller
 public class PostCtrl {
 	
+	
+	
+	public void init(
+			Model model,
+			HttpSession httpSession
+	){
+		User user = (User)httpSession.getAttribute("user");
+		model.addAttribute("station", user.getStnm());
+	}
+	
 	@RequestMapping(value="post", method=RequestMethod.GET)
-	public String post() {
+	public String post(
+			Model model,
+			HttpSession httpSession
+	){
+		init(model, httpSession);
 		
 		return "PostView";
 	}
@@ -23,35 +37,10 @@ public class PostCtrl {
 	public String post(
 			@RequestParam(value="user_stcd") String user_stcd, 
 			@RequestParam(value="user_psd") String user_psd, 
-			Model model, 
+			Model model,
 			HttpSession httpSession
 	){
-		if( httpSession.getAttribute("user") != null ){
-			return "redirect:/cms/dashboard/select";
-		}
-		
-		String error = null;
-		
-		User user = userService.selectByPrimaryKey(user_stcd);
-		
-		if( user != null ){
-			String userPsd = user.getPsd();
-			if( userPsd != null && userPsd.equals(user_psd) ){
-				httpSession.setAttribute("user", user);
-				
-				return "redirect:/cms/dashboard/select";
-			}else{
-				error = "密码不正确";
-			}
-		}else if( user_stcd != null ){
-			error = "用户不存在";
-		}
-		
-		if( error != null ){
-			model.addAttribute("error", error);
-		}
-		model.addAttribute("user_stcd", user_stcd);
-		model.addAttribute("user_psd", user_psd);
+		init(model, httpSession);
 		
 		return "LoginView";
 	}

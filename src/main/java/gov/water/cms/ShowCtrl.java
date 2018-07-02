@@ -13,8 +13,20 @@ import gov.water.model.User;
 @Controller
 public class ShowCtrl {
 	
+	public void init(
+			Model model,
+			HttpSession httpSession
+	){
+		User user = (User)httpSession.getAttribute("user");
+		model.addAttribute("station", user.getStnm());
+	}
+	
 	@RequestMapping(value="show", method=RequestMethod.GET)
-	public String show() {
+	public String show(
+			Model model,
+			HttpSession httpSession
+	){
+		init(model, httpSession);
 		
 		return "ShowView";
 	}
@@ -26,32 +38,7 @@ public class ShowCtrl {
 			Model model, 
 			HttpSession httpSession
 	){
-		if( httpSession.getAttribute("user") != null ){
-			return "redirect:/cms/dashboard/select";
-		}
-		
-		String error = null;
-		
-		User user = userService.selectByPrimaryKey(user_stcd);
-		
-		if( user != null ){
-			String userPsd = user.getPsd();
-			if( userPsd != null && userPsd.equals(user_psd) ){
-				httpSession.setAttribute("user", user);
-				
-				return "redirect:/cms/dashboard/select";
-			}else{
-				error = "密码不正确";
-			}
-		}else if( user_stcd != null ){
-			error = "用户不存在";
-		}
-		
-		if( error != null ){
-			model.addAttribute("error", error);
-		}
-		model.addAttribute("user_stcd", user_stcd);
-		model.addAttribute("user_psd", user_psd);
+		init(model, httpSession);
 		
 		return "ShowView";
 	}

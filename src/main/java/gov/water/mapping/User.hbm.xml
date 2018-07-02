@@ -7,7 +7,7 @@
 
 <class 
     name="gov.water.model.User" 
-    table="zf_Users"
+    table="zf_User"
 >
 
     <id
@@ -26,9 +26,9 @@
         length="10"
     />
     <property
-        name="psd"
+        name="pwd"
         type="java.lang.String"
-        column="psd"
+        column="pwd"
         not-null="true"
         length="255"
     />

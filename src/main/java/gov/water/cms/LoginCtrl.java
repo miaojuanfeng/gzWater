@@ -23,13 +23,13 @@ public class LoginCtrl {
 		if( httpSession.getAttribute("user") != null ){
 			return "redirect:/post";
 		}
-		return "LoginView";
+		return "UserView";
 	}
 	
 	@RequestMapping(value="login", method=RequestMethod.POST)
 	public String login(
 			@RequestParam(value="user_stcd") String user_stcd, 
-			@RequestParam(value="user_psd") String user_psd, 
+			@RequestParam(value="user_pwd") String user_pwd, 
 			Model model, 
 			HttpSession httpSession
 	){
@@ -42,8 +42,7 @@ public class LoginCtrl {
 		User user = userService.selectByPrimaryKey(user_stcd);
 		
 		if( user != null ){
-			String userPsd = user.getPsd();
-			if( userPsd != null && userPsd.equals(user_psd) ){
+			if( user.getPwd() != null && user_pwd.equals(user.getPwd()) ){
 				httpSession.setAttribute("user", user);
 				
 				return "redirect:/post";
@@ -58,9 +57,8 @@ public class LoginCtrl {
 			model.addAttribute("error", error);
 		}
 		model.addAttribute("user_stcd", user_stcd);
-		model.addAttribute("user_psd", user_psd);
 		
-		return "LoginView";
+		return "UserView";
 	}
 	
 	@RequestMapping(value="logout", method=RequestMethod.GET)

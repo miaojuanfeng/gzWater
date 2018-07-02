@@ -23,10 +23,10 @@
 								<!-- div class="no-margin-top col-sm-4 col-xs-12">
 									<a class="btn btn-sm btn-primary" href="asd">è¸åéæ¥è¯¢</a>
 								</div-->
-								<div class="no-margin-top col-sm-4 col-xs-12">
+								<div class="no-margin-top col-sm-6 col-xs-12">
 									<a class="btn btn-sm btn-primary" href="<c:url value="/post"></c:url>">蒸发量报送</a>
 								</div>
-								<div class="no-margin-top col-sm-4 col-xs-12">
+								<div class="no-margin-top col-sm-6 col-xs-12">
 									<a class="btn btn-sm btn-primary" href="<c:url value="/logout"></c:url>">退出登录</a>
 								</div>
 							</div>
@@ -34,12 +34,14 @@
 					</div>
 				</div>
 			</div>
-			<div class="error">éè¯¯ï¼</div>
+			<c:if test="${error != null}">
+			<div class="error">${error}</div>
+			</c:if>
 			<div class="container-fluid">
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
 						<div class="fieldset show-wrapper">
-							<h2 class="corpcolor-font"><span>蒸发量查询 - 某某站台</span></h2>
+							<h2 class="corpcolor-font"><span>蒸发量查询 - ${station}站</span></h2>
 							<form method="post">
 								<table>
 									<tbody>

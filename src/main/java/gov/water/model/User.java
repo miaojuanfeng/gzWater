@@ -4,7 +4,7 @@ public class User {
 	
 	private String stcd;
 	private String stnm;
-	private String psd;
+	private String pwd;
 	
 	public String getStcd() {
 		return stcd;
@@ -18,11 +18,11 @@ public class User {
 	public void setStnm(String stnm) {
 		this.stnm = stnm;
 	}
-	public String getPsd() {
-		return psd;
+	public String getPwd() {
+		return pwd;
 	}
-	public void setPsd(String psd) {
-		this.psd = psd;
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
 	
 	

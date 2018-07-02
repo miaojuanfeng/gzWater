@@ -41,7 +41,7 @@
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
 						<div class="fieldset post-wrapper">
-							<h2 class="corpcolor-font"><span>蒸发量报送 - 某某站台</span></h2>
+							<h2 class="corpcolor-font"><span>蒸发量报送 - ${station}站</span></h2>
 							<form method="post">
 								<table>
 									<tbody>

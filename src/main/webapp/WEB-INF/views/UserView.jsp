@@ -29,13 +29,13 @@
 											<td>用户名</td>
 										</tr>
 										<tr>
-											<td><input type="text" name="user_stcd" class="form-control input-sm required" placeholder="用户名" value="" /></td>
+											<td><input type="text" name="user_stcd" class="form-control input-sm required" placeholder="用户名" value="${user_stcd}" /></td>
 										</tr>
 										<tr>
 											<td>密码</td>
 										</tr>
 										<tr>
-											<td><input type="password" name="user_psd" class="form-control input-sm required" placeholder="密码" value="" /></td>
+											<td><input type="password" name="user_pwd" class="form-control input-sm required" placeholder="密码" /></td>
 										</tr>
 										<tr>
 											<td><input type="checkbox" name="user_auto" class=""/> 记住该账户</td>
