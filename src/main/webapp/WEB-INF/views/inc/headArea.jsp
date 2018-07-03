@@ -1,9 +1,9 @@
-<link rel="stylesheet" href="<c:url value="/assets/css/jquery-ui.css"></c:url>">
-		<link rel="stylesheet" href="<c:url value="/assets/css/bootstrap.css"></c:url>">
-		<link rel="stylesheet" href="<c:url value="/assets/css/chosen.css"></c:url>">
-		<link rel="stylesheet" href="<c:url value="/assets/css/bootstrap-datetimepicker.css"></c:url>">
-		<link rel="stylesheet" href="<c:url value="/assets/css/style.css"></c:url>" media="all">
-		<link rel="stylesheet" href="<c:url value="/assets/css/login.css"></c:url>">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/assets/css/jquery-ui.css"></c:url>">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/assets/css/bootstrap.css"></c:url>">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/assets/css/chosen.css"></c:url>">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/assets/css/bootstrap-datetimepicker.css"></c:url>">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/assets/css/style.css"></c:url>" media="all">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/assets/css/login.css"></c:url>">
 
 		
 		<script src="<c:url value="/assets/js/jquery-1.11.3.min.js"></c:url>"></script>

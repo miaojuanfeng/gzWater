@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Login</title>
+		<title>蒸发量报送 - 赣州市水文局蒸发量查询报送系统</title>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,7 +13,7 @@
 
 	<body>
 		<div class="login-area">
-			<h2 class="title-wrapper"><span>江西省水文局蒸发量查询报送系统</span></h2>
+			<h2 class="title-wrapper"><span>赣州市水文局蒸发量查询报送系统</span></h2>
 			<div class="container-fluid menu-wrapper">
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
@@ -21,13 +21,13 @@
 							<h2 class="corpcolor-font"><span>导航菜单</span></h2>
 							<div class="row">
 								<div class="no-margin-top col-sm-6 col-xs-12">
-									<a class="btn btn-sm btn-primary" href="<c:url value="/show"></c:url>">蒸发量查询</a>
+									<a class="btn btn-sm btn-primary" href="<c:url value="/cms/show"></c:url>">蒸发量查询</a>
 								</div>
 								<!-- div class="no-margin-top col-sm-6 col-xs-12">
 									<a class="btn btn-sm btn-primary" href="asd">蒸发量报送</a>
 								</div !-->
 								<div class="no-margin-top col-sm-6 col-xs-12">
-									<a class="btn btn-sm btn-primary" href="<c:url value="/logout"></c:url>">退出登录</a>
+									<a class="btn btn-sm btn-primary" href="<c:url value="/cms/logout"></c:url>">退出登录</a>
 								</div>
 							</div>
 						</div>
@@ -41,7 +41,7 @@
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
 						<div class="fieldset post-wrapper">
-							<h2 class="corpcolor-font"><span>蒸发量报送 - ${stnm}站</span></h2>
+							<h2 class="corpcolor-font"><span>日蒸发量报送 - ${stnm}站</span></h2>
 							<form method="post">
 								<table>
 									<tbody>

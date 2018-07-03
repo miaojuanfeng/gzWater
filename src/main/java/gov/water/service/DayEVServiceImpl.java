@@ -42,4 +42,10 @@ public class DayEVServiceImpl implements DayEVService{
 		// TODO Auto-generated method stub
 		return dayEVDao.selectFromTo(stcd, from, to, offset, pageSize);
 	}
+
+	@Override
+	public Long selectCount(String stcd, String from, String to) {
+		// TODO Auto-generated method stub
+		return dayEVDao.selectCount(stcd, from, to);
+	}
 }

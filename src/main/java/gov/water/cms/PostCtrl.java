@@ -20,6 +20,7 @@ import gov.water.model.User;
 import gov.water.service.DayEVService;
 
 @Controller
+@RequestMapping("cms")
 public class PostCtrl {
 	
 	@Autowired

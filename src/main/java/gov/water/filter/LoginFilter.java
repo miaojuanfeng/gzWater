@@ -37,7 +37,7 @@ public class LoginFilter implements Filter{
 		HttpSession httpSession = httpRequest.getSession();
 		User user = (User)httpSession.getAttribute("user");
 		if( user == null ){
-			httpResponse.sendRedirect(httpRequest.getContextPath()+"/login");
+			httpResponse.sendRedirect(httpRequest.getContextPath()+"/cms/login");
 		}else{
 			chain.doFilter(httpRequest, httpResponse);
 		}

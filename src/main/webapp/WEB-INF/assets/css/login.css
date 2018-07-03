@@ -88,12 +88,15 @@ body{
 }
 .login-area .show-wrapper .th-date{
 	text-align: left;
+	width:33.3%;
 }
 .login-area .show-wrapper .th-time{
 	text-align: center;
+	width:33.3%;
 }
 .login-area .show-wrapper .th-data{
 	text-align: right;
+	width:33.3%;
 }
 /* Michael.Miao */
 

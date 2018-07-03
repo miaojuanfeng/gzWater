@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Login</title>
+		<title>用户登录 - 赣州市水文局蒸发量查询报送系统</title>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,7 +13,7 @@
 
 	<body>
 		<div class="login-area">
-			<h2 class="title-wrapper"><span>江西省水文局蒸发量查询报送系统</span></h2>
+			<h2 class="title-wrapper"><span>赣州市水文局蒸发量查询报送系统</span></h2>
 			<c:if test="${error != null}">
 			<div class="error">${error}</div>
 			</c:if>

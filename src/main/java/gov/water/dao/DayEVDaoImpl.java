@@ -67,6 +67,17 @@ public class DayEVDaoImpl implements DayEVDao {
         session.close();
         return 1;
 	}
+	
+	@Override
+	public Long selectCount(String stcd, String from, String to) {
+		// TODO Auto-generated method stub
+		String hql="select count(*) from DayEV where stcd=?0 and CONVERT(varchar(10), tm, 23)>=?1 and CONVERT(varchar(10), tm, 23)<=?2";
+        Query query = getSession().createQuery(hql).setString("0", stcd).setString("1", from).setString("2", to);
+        if( query != null ){
+        	return (Long)query.uniqueResult();
+        }
+        return null;
+	}
 
 	@Override
 	public List<DayEV> selectFromTo(String stcd, String from, String to, Integer offset, Integer pageSize) {
@@ -81,5 +92,4 @@ public class DayEVDaoImpl implements DayEVDao {
 		}
         return (List<DayEV>)query.list();
 	}
-
 }

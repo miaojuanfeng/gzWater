@@ -13,6 +13,7 @@ import gov.water.model.User;
 import gov.water.service.UserService;
 
 @Controller
+@RequestMapping("cms")
 public class LoginCtrl {
 	
 	@Autowired
@@ -21,7 +22,7 @@ public class LoginCtrl {
 	@RequestMapping(value="login", method=RequestMethod.GET)
 	public String login(HttpSession httpSession) {
 		if( httpSession.getAttribute("user") != null ){
-			return "redirect:/post";
+			return "redirect:/cms/post";
 		}
 		return "UserView";
 	}
@@ -34,7 +35,7 @@ public class LoginCtrl {
 			HttpSession httpSession
 	){
 		if( httpSession.getAttribute("user") != null ){
-			return "redirect:/post";
+			return "redirect:/cms/post";
 		}
 		
 		String error = null;
@@ -45,7 +46,7 @@ public class LoginCtrl {
 			if( user.getPwd() != null && user_pwd.equals(user.getPwd()) ){
 				httpSession.setAttribute("user", user);
 				
-				return "redirect:/post";
+				return "redirect:/cms/post";
 			}else{
 				error = "ÃÜÂë²»ÕýÈ·";
 			}
@@ -65,6 +66,6 @@ public class LoginCtrl {
 	public String logout(HttpSession httpSession){
 		httpSession.setAttribute("user", null);
 		
-		return "redirect:/login";
+		return "redirect:/cms/login";
 	}
 }
