@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>蒸发量查询 - 赣州市水文局蒸发量查询报送系统</title>
+		<title>蒸发量查询 - 赣州市水文局日蒸发量查询报送系统</title>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -14,7 +14,7 @@
 
 	<body>
 		<div class="login-area">
-			<h2 class="title-wrapper"><span>赣州市水文局蒸发量查询报送系统</span></h2>
+			<h2 class="title-wrapper"><span>赣州市水文局日蒸发量查询报送系统</span></h2>
 			<div class="container-fluid menu-wrapper">
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
