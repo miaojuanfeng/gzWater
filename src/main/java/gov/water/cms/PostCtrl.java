@@ -38,7 +38,7 @@ public class PostCtrl {
 		Date date = new Date();
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date);
-		calendar.add(Calendar.DAY_OF_MONTH, -2);
+		calendar.add(Calendar.DAY_OF_MONTH, -1);
 		date = calendar.getTime();
 		DayEV dayEV = dayEVService.selectByDate(user.getStcd(), sdf.format(date));
 		if( dayEV != null ){
@@ -69,10 +69,10 @@ public class PostCtrl {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();
-		Calendar calendar = Calendar.getInstance();
+		/*Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date);
 		calendar.add(Calendar.DAY_OF_MONTH, -1);
-		date = calendar.getTime();
+		date = calendar.getTime();*/
 		String dateStr = sdf.format(date);
 		
 		String error = null;

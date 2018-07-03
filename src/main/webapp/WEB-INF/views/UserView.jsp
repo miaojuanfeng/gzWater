@@ -37,9 +37,9 @@
 										<tr>
 											<td><input type="password" name="user_pwd" class="form-control input-sm required" placeholder="密码" /></td>
 										</tr>
-										<tr>
+										<!--tr>
 											<td><input type="checkbox" name="user_auto" class=""/> 记住该账户</td>
-										</tr>
+										</tr-->
 										<tr>
 											<td><button type="submit" class="btn-login btn btn-sm btn-primary pull-right"><i class="glyphicon glyphicon-send"></i> 登录</button></td>
 										</tr>

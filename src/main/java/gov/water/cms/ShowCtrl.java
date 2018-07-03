@@ -52,12 +52,12 @@ public class ShowCtrl {
 		String from = request.getParameter("from");
 		String to = request.getParameter("to");
 		
-		if( from == null ){
+		if( from == null || from.equals("") ){
 			from = "0000-00-00";
 		}else{
 			model.addAttribute("from", from);
 		}
-		if( to == null ){
+		if( to == null || to.equals("") ){
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date date = new Date();
 			to = sdf.format(date);
