@@ -32,6 +32,13 @@
         not-null="true"
         length="255"
     />
+    <property
+        name="type"
+        type="java.lang.String"
+        column="type"
+        not-null="true"
+        length="1"
+    />
 
 </class>
 </hibernate-mapping>

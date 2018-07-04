@@ -75,26 +75,56 @@
 							<hr>
 							<div>
 								<table class="table-striped">
-									<tbody>
-										<tr>
-											<th class="th-date">日期</td>
-											<th class="th-time">时间</td>
-											<th class="th-data">蒸发量</td>
-										</tr>
-										<c:forEach items="${dayEVs}" var="item">
-										<tr>
-											<td class="th-date"><fmt:formatDate  value="${item.daypk.tm}"  pattern="yyyy-MM-dd" /></td>
-											<td class="th-time"><fmt:formatDate  value="${item.daypk.tm}"  pattern="HH:mm" /></td>
-											<td class="th-data">${item.dye}</td>
-										</tr>
-										</c:forEach>
-										
-										<c:if test="${totalRecord == 0}">
-											<tr class="list-row">
-												<td colspan="10" align="center">暂无数据</td>
-											</tr>
-										</c:if>
-									</tbody>
+									<c:choose> 
+	     								<c:when test="${type == 's'}"> 
+											<tbody class="tbody-station">
+												<tr>
+													<th class="th-date">日期</td>
+													<th class="th-time">时间</td>
+													<th class="th-data">蒸发量</td>
+												</tr>
+												<c:forEach items="${dayEVs}" var="item">
+												<tr>
+													<td class="th-date"><fmt:formatDate  value="${item.daypk.tm}"  pattern="yyyy-MM-dd" /></td>
+													<td class="th-time"><fmt:formatDate  value="${item.daypk.tm}"  pattern="HH:mm" /></td>
+													<td class="th-data">${item.dye}</td>
+												</tr>
+												</c:forEach>
+												
+												<c:if test="${totalRecord == 0}">
+													<tr class="list-row">
+														<td colspan="10" align="center">暂无数据</td>
+													</tr>
+												</c:if>
+											</tbody>
+										</c:when>
+										<c:otherwise>   
+											<tbody class="tbody-admin">
+												<tr>
+													<th class="th-stcd">站码</td>
+													<th class="th-stnm">站名</td>
+													<th class="th-date">日期</td>
+													<th class="th-time">时间</td>
+													<th class="th-data">蒸发量</td>
+												</tr>
+												<c:forEach items="${dayEVs}" var="item">
+												<tr>
+													<th class="th-stcd">${item.daypk.stcd}</td>
+													<th class="th-stnm">${stations[item.daypk.stcd]}</td>
+													<td class="th-date"><fmt:formatDate  value="${item.daypk.tm}"  pattern="yyyy-MM-dd" /></td>
+													<td class="th-time"><fmt:formatDate  value="${item.daypk.tm}"  pattern="HH:mm" /></td>
+													<td class="th-data">${item.dye}</td>
+												</tr>
+												</c:forEach>
+												
+												<c:if test="${totalRecord == 0}">
+													<tr class="list-row">
+														<td colspan="10" align="center">暂无数据</td>
+													</tr>
+												</c:if>
+											</tbody>
+	  									</c:otherwise>
+									</c:choose>
 								</table>
 								<div class="page-area">
 										<span class="btn btn-sm btn-default">${totalRecord}</span>

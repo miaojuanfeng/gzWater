@@ -33,6 +33,7 @@ public class PostCtrl {
 		User user = (User)httpSession.getAttribute("user");
 		model.addAttribute("stcd", user.getStcd());
 		model.addAttribute("stnm", user.getStnm());
+		model.addAttribute("type", user.getType());
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();

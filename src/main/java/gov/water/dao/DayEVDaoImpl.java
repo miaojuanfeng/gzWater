@@ -92,4 +92,29 @@ public class DayEVDaoImpl implements DayEVDao {
 		}
         return (List<DayEV>)query.list();
 	}
+
+	@Override
+	public Long selectCount(String from, String to) {
+		// TODO Auto-generated method stub
+		String hql="select count(*) from DayEV where CONVERT(varchar(10), tm, 23)>=?1 and CONVERT(varchar(10), tm, 23)<=?2";
+        Query query = getSession().createQuery(hql).setString("1", from).setString("2", to);
+        if( query != null ){
+        	return (Long)query.uniqueResult();
+        }
+        return null;
+	}
+
+	@Override
+	public List<DayEV> selectFromTo(String from, String to, Integer offset, Integer pageSize) {
+		// TODO Auto-generated method stub
+		String hql = "from DayEV where CONVERT(varchar(10), tm, 23)>=?1 and CONVERT(varchar(10), tm, 23)<=?2 order by tm asc, stcd asc";
+		Query query = getSession().createQuery(hql).setString("1", from).setString("2", to);
+		if( offset > -1 ){
+			query.setFirstResult(offset);
+		}
+		if( pageSize > 0 ){
+			query.setMaxResults(pageSize);
+		}
+        return (List<DayEV>)query.list();
+	}
 }

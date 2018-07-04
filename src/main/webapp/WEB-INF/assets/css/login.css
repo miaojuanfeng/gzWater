@@ -87,17 +87,37 @@ body{
 	margin-top:3px;
 	margin-bottom: 0;
 }
-.login-area .show-wrapper .th-date{
+.login-area .show-wrapper .tbody-station .th-date{
 	text-align: left;
 	width:33.3%;
 }
-.login-area .show-wrapper .th-time{
+.login-area .show-wrapper .tbody-station .th-time{
 	text-align: center;
 	width:33.3%;
 }
-.login-area .show-wrapper .th-data{
+.login-area .show-wrapper .tbody-station .th-data{
 	text-align: right;
 	width:33.3%;
+}
+.login-area .show-wrapper .tbody-admin .th-stcd{
+	text-align: left;
+	width:25%;
+}
+.login-area .show-wrapper .tbody-admin .th-stnm{
+	text-align: center;
+	width:15%;
+}
+.login-area .show-wrapper .tbody-admin .th-date{
+	text-align: center;
+	width:30%;
+}
+.login-area .show-wrapper .tbody-admin .th-time{
+	text-align: center;
+	width:15%;
+}
+.login-area .show-wrapper .tbody-admin .th-data{
+	text-align: right;
+	width:15%;
 }
 /* Michael.Miao */
 

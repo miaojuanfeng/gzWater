@@ -51,6 +51,7 @@
 										<tr>
 											<td class="yesterday-data">${dye}</td>
 										</tr>
+										<c:if test="${type == 's'}">
 										<tr>
 											<td>昨日蒸发量</td>
 										</tr>
@@ -63,6 +64,7 @@
 										<tr>
 											<td><button type="submit" class="btn-login btn btn-sm btn-primary pull-right"><i class="glyphicon glyphicon-send"></i> 提交</button></td>
 										</tr>
+										</c:if>
 									</tbody>
 								</table>
 							</form>

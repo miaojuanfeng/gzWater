@@ -1,5 +1,7 @@
 package gov.water.dao;
 
+import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -26,6 +28,14 @@ public class UserDaoImpl implements UserDao {
         	return (User)query.uniqueResult();
         }
         return null;
+	}
+
+	@Override
+	public List<User> selectAll() {
+		// TODO Auto-generated method stub
+		String hql = "from User where type='s'";
+		Query query = getSession().createQuery(hql);
+        return (List<User>)query.list();
 	}
 
 }

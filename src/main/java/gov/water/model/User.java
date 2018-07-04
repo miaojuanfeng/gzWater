@@ -5,6 +5,7 @@ public class User {
 	private String stcd;
 	private String stnm;
 	private String pwd;
+	private String type;
 	
 	public String getStcd() {
 		return stcd;
@@ -23,6 +24,12 @@ public class User {
 	}
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	
