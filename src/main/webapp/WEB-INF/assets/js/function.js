@@ -47,10 +47,10 @@ function onResize(){
 		if( wHeight < pHeight ){
 			wMarginTop = (pHeight-wHeight)/2;
 		}
+		$('.login-area').css({'marginLeft': wMarginLeft, 'marginTop': wMarginTop}).fadeIn(100);
+	}else{
+		$('.login-area').css({'marginLeft': wMarginLeft, 'marginTop': wMarginTop});
 	}
-	$('.login-area').css('marginLeft', wMarginLeft);
-	$('.login-area').css('marginTop', wMarginTop);
-
 }
 
 $(function(){

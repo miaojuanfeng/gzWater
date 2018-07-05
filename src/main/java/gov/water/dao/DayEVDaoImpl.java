@@ -82,7 +82,7 @@ public class DayEVDaoImpl implements DayEVDao {
 	@Override
 	public List<DayEV> selectFromTo(String stcd, String from, String to, Integer offset, Integer pageSize) {
 		// TODO Auto-generated method stub
-		String hql = "from DayEV where stcd=?0 and CONVERT(varchar(10), tm, 23)>=?1 and CONVERT(varchar(10), tm, 23)<=?2";
+		String hql = "from DayEV where stcd=?0 and CONVERT(varchar(10), tm, 23)>=?1 and CONVERT(varchar(10), tm, 23)<=?2 order by tm desc";
 		Query query = getSession().createQuery(hql).setString("0", stcd).setString("1", from).setString("2", to);
 		if( offset > -1 ){
 			query.setFirstResult(offset);
@@ -107,7 +107,7 @@ public class DayEVDaoImpl implements DayEVDao {
 	@Override
 	public List<DayEV> selectFromTo(String from, String to, Integer offset, Integer pageSize) {
 		// TODO Auto-generated method stub
-		String hql = "from DayEV where CONVERT(varchar(10), tm, 23)>=?1 and CONVERT(varchar(10), tm, 23)<=?2 order by tm asc, stcd asc";
+		String hql = "from DayEV where CONVERT(varchar(10), tm, 23)>=?1 and CONVERT(varchar(10), tm, 23)<=?2 order by tm desc, stcd asc";
 		Query query = getSession().createQuery(hql).setString("1", from).setString("2", to);
 		if( offset > -1 ){
 			query.setFirstResult(offset);

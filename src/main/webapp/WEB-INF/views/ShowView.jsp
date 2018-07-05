@@ -79,9 +79,9 @@
 	     								<c:when test="${type == 's'}"> 
 											<tbody class="tbody-station">
 												<tr>
-													<th class="th-date">日期</td>
-													<th class="th-time">时间</td>
-													<th class="th-data">蒸发量</td>
+													<th class="th-date">日期</th>
+													<th class="th-time">时间</th>
+													<th class="th-data">蒸发量</th>
 												</tr>
 												<c:forEach items="${dayEVs}" var="item">
 												<tr>
@@ -101,16 +101,16 @@
 										<c:otherwise>   
 											<tbody class="tbody-admin">
 												<tr>
-													<th class="th-stcd">站码</td>
-													<th class="th-stnm">站名</td>
-													<th class="th-date">日期</td>
-													<th class="th-time">时间</td>
-													<th class="th-data">蒸发量</td>
+													<th class="th-stcd">站码</th>
+													<th class="th-stnm">站名</th>
+													<th class="th-date">日期</th>
+													<th class="th-time">时间</th>
+													<th class="th-data">蒸发量</th>
 												</tr>
 												<c:forEach items="${dayEVs}" var="item">
 												<tr>
-													<th class="th-stcd">${item.daypk.stcd}</td>
-													<th class="th-stnm">${stations[item.daypk.stcd]}</td>
+													<td class="th-stcd">${item.daypk.stcd}</td>
+													<td class="th-stnm">${stations[item.daypk.stcd]}</td>
 													<td class="th-date"><fmt:formatDate  value="${item.daypk.tm}"  pattern="yyyy-MM-dd" /></td>
 													<td class="th-time"><fmt:formatDate  value="${item.daypk.tm}"  pattern="HH:mm" /></td>
 													<td class="th-data">${item.dye}</td>

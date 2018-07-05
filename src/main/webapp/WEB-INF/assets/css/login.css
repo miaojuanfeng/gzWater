@@ -56,6 +56,9 @@ body{
 .no-margin-top{
 	margin-top: 0 !important;
 }
+.login-area{
+	display:none;
+}
 .login-area div[class*="col-xs-"] {
     margin-top: 15px;
 }
@@ -145,6 +148,7 @@ body{
 		top: 0;
 		left: 0;
 		border: none;
+		display: block;
 	}
 	.login-area .fieldset.left {
 		margin-right: 0px;
