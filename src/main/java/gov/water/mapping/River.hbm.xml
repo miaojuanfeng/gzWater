@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="gov.water.model.River" 
+    table="ST_RIVER_R"
+>
+
+    <composite-id name="daypk" class="gov.water.model.DayPK">
+   		<key-property name="stcd"></key-property>
+   		<key-property name="tm"></key-property>
+  	</composite-id>
+
+	<property
+        name="z"
+        type="java.lang.Float"
+        column="z"
+    />
+    <property
+        name="q"
+        type="java.lang.Float"
+        column="q"
+    />
+    <property
+        name="xsa"
+        type="java.lang.Float"
+        column="xsa"
+    />
+    <property
+        name="xsavv"
+        type="java.lang.Float"
+        column="xsavv"
+    />
+    <property
+        name="xsmxv"
+        type="java.lang.Float"
+        column="xsmxv"
+    />
+    <property
+        name="flwchrcd"
+        type="java.lang.String"
+        column="flwchrcd"
+        length="1"
+    />
+    <property
+        name="wptn"
+        type="java.lang.String"
+        column="wptn"
+        length="1"
+    />
+    <property
+        name="msqmt"
+        type="java.lang.String"
+        column="msqmt"
+        length="1"
+    />
+    <property
+        name="msamt"
+        type="java.lang.String"
+        column="msamt"
+        length="1"
+    />
+    <property
+        name="msvmt"
+        type="java.lang.String"
+        column="msvmt"
+        length="1"
+    />
+    <property
+        name="tmInsert"
+        type="java.util.Date"
+        column="TM_insert"
+    />
+    <property
+        name="insertTime"
+        type="java.util.Date"
+        column="INSERTTIME"
+    />
+    <property
+        name="stationTYP"
+        type="java.lang.String"
+        column="StationTYP"
+        length="20"
+    />
+
+</class>
+</hibernate-mapping>
