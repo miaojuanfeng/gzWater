@@ -2,7 +2,6 @@ package gov.water.cms;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +19,7 @@ import gov.water.model.DayEV;
 import gov.water.model.User;
 import gov.water.service.DayEVService;
 import gov.water.service.UserService;
+import gov.water.util.FuncUtil;
 
 @Controller
 @RequestMapping("cms")
@@ -31,6 +31,9 @@ public class ShowCtrl {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private FuncUtil funcUtil;
+	
 	public void init(
 			Model model,
 			HttpSession httpSession
@@ -40,9 +43,9 @@ public class ShowCtrl {
 		model.addAttribute("type", user.getType());
 	}
 	
-	@RequestMapping(value="/show")
+	@RequestMapping(value="show")
 	public String select(HttpServletRequest request){
-		return "redirect:/cms/show/1"+this.requestParameters(request);
+		return "redirect:/cms/show/1"+funcUtil.requestParameters(request);
 	}
 	
 	@RequestMapping(value="show/{page}")
@@ -105,38 +108,9 @@ public class ShowCtrl {
 		model.addAttribute("totalRecord", totalRecord);
 		model.addAttribute("dayEVs", dayEVs);
 		model.addAttribute("stations", stations);
-		model.addAttribute("parameters", this.requestParameters(request));
+		model.addAttribute("parameters", funcUtil.requestParameters(request));
 		
 		return "ShowView";
 	}
-	
-	private String requestParameters(HttpServletRequest request){
-		String retval = "";
-		
-		Enumeration<String> em = request.getParameterNames();
-		while (em.hasMoreElements()) {
-		    String name = (String) em.nextElement();
-		    String value = request.getParameter(name);
-		    
-		    if( retval.equals("") ){
-				retval = "?" + name + "=" + value;
-			}else{
-				retval += "&" + name + "=" + value;
-			}
-		}
-		
-		return retval;
-	}
-	
-	/*@RequestMapping(value="show", method=RequestMethod.POST)
-	public String show(
-			@RequestParam(value="user_stcd") String user_stcd, 
-			@RequestParam(value="user_psd") String user_psd, 
-			Model model, 
-			HttpSession httpSession
-	){
-		init(model, httpSession);
-		
-		return "ShowView";
-	}*/
+
 }

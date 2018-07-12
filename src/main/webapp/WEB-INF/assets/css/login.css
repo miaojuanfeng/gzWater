@@ -102,6 +102,22 @@ body{
 	text-align: right;
 	width:33.3%;
 }
+.login-area .show-wrapper .tbody-station .th-data{
+	text-align: right;
+	width:33.3%;
+}
+.login-area .flow-wrapper .tbody-station .th-date{
+	text-align: left;
+	width:10%;
+}
+.login-area .flow-wrapper .tbody-station .th-time{
+	text-align: center;
+	width:10%;
+}
+.login-area .flow-wrapper .tbody-station .th-data{
+	text-align: center;
+	width:10%;
+}
 .login-area .show-wrapper .tbody-admin .th-stcd{
 	text-align: left;
 	width:25%;
