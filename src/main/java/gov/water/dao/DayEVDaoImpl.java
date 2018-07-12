@@ -31,7 +31,6 @@ public class DayEVDaoImpl implements DayEVDao {
         return null;
 	}
 
-	@Override
 	public DayEV selectByDate(String stcd, String date) {
 		// TODO Auto-generated method stub
 		String hql="from DayEV where stcd=?0 and CONVERT(varchar(10), tm, 23)=?1";
@@ -41,59 +40,27 @@ public class DayEVDaoImpl implements DayEVDao {
         }
         return null;
 	}
-	
-	@Override
+
 	public int insertByPrimaryKey(DayEV dayEV) {
 		// TODO Auto-generated method stub
 		Session session = getSession();
         Transaction tran = session.beginTransaction();
-        session.save(dayEV);    //执行
-        tran.commit();  //提交
+        session.save(dayEV);
+        tran.commit();
         session.close();
         return 1;
 	}
 
-	@Override
 	public int updateByPrimaryKey(DayEV dayEV) {
 		// TODO Auto-generated method stub
-		/*String hql="update DayEV set dye=:dye where stcd=:daypk.stcd and CONVERT(varchar(10), tm, 23)=:daypk.tm";
-		Query query = getSession().createQuery(hql);
-		query.setProperties(dayEV);
-        return query.executeUpdate();*/
 		Session session = getSession();
         Transaction tran = session.beginTransaction();
-        session.update(dayEV);    //执行
-        tran.commit();  //提交
+        session.update(dayEV);
+        tran.commit();
         session.close();
         return 1;
 	}
-	
-	@Override
-	public Long selectCount(String stcd, String from, String to) {
-		// TODO Auto-generated method stub
-		String hql="select count(*) from DayEV where stcd=?0 and CONVERT(varchar(10), tm, 23)>=?1 and CONVERT(varchar(10), tm, 23)<=?2";
-        Query query = getSession().createQuery(hql).setString("0", stcd).setString("1", from).setString("2", to);
-        if( query != null ){
-        	return (Long)query.uniqueResult();
-        }
-        return null;
-	}
 
-	@Override
-	public List<DayEV> selectFromTo(String stcd, String from, String to, Integer offset, Integer pageSize) {
-		// TODO Auto-generated method stub
-		String hql = "from DayEV where stcd=?0 and CONVERT(varchar(10), tm, 23)>=?1 and CONVERT(varchar(10), tm, 23)<=?2 order by tm desc";
-		Query query = getSession().createQuery(hql).setString("0", stcd).setString("1", from).setString("2", to);
-		if( offset > -1 ){
-			query.setFirstResult(offset);
-		}
-		if( pageSize > 0 ){
-			query.setMaxResults(pageSize);
-		}
-        return (List<DayEV>)query.list();
-	}
-
-	@Override
 	public Long selectCount(String from, String to) {
 		// TODO Auto-generated method stub
 		String hql="select count(*) from DayEV where CONVERT(varchar(10), tm, 23)>=?1 and CONVERT(varchar(10), tm, 23)<=?2";
@@ -104,11 +71,33 @@ public class DayEVDaoImpl implements DayEVDao {
         return null;
 	}
 
-	@Override
 	public List<DayEV> selectFromTo(String from, String to, Integer offset, Integer pageSize) {
 		// TODO Auto-generated method stub
 		String hql = "from DayEV where CONVERT(varchar(10), tm, 23)>=?1 and CONVERT(varchar(10), tm, 23)<=?2 order by tm desc, stcd asc";
 		Query query = getSession().createQuery(hql).setString("1", from).setString("2", to);
+		if( offset > -1 ){
+			query.setFirstResult(offset);
+		}
+		if( pageSize > 0 ){
+			query.setMaxResults(pageSize);
+		}
+        return (List<DayEV>)query.list();
+	}
+
+	public Long selectCount(String stcd, String from, String to) {
+		// TODO Auto-generated method stub
+		String hql="select count(*) from DayEV where stcd=?0 and CONVERT(varchar(10), tm, 23)>=?1 and CONVERT(varchar(10), tm, 23)<=?2";
+        Query query = getSession().createQuery(hql).setString("0", stcd).setString("1", from).setString("2", to);
+        if( query != null ){
+        	return (Long)query.uniqueResult();
+        }
+        return null;
+	}
+
+	public List<DayEV> selectFromTo(String stcd, String from, String to, Integer offset, Integer pageSize) {
+		// TODO Auto-generated method stub
+		String hql = "from DayEV where stcd=?0 and CONVERT(varchar(10), tm, 23)>=?1 and CONVERT(varchar(10), tm, 23)<=?2 order by tm desc";
+		Query query = getSession().createQuery(hql).setString("0", stcd).setString("1", from).setString("2", to);
 		if( offset > -1 ){
 			query.setFirstResult(offset);
 		}

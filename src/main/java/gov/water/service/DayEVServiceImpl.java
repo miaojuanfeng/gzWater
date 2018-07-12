@@ -19,45 +19,38 @@ public class DayEVServiceImpl implements DayEVService{
 		return dayEVDao.selectByPrimaryKey(stcd);
 	}
 
-	@Override
 	public DayEV selectByDate(String stcd, String date) {
 		// TODO Auto-generated method stub
 		return dayEVDao.selectByDate(stcd, date);
 	}
 
-	@Override
 	public int insertByPrimaryKey(DayEV dayEV) {
 		// TODO Auto-generated method stub
 		return dayEVDao.insertByPrimaryKey(dayEV);
 	}
 
-	@Override
 	public int updateByPrimaryKey(DayEV dayEV) {
 		// TODO Auto-generated method stub
 		return dayEVDao.updateByPrimaryKey(dayEV);
 	}
 
-	@Override
-	public List<DayEV> selectFromTo(String stcd, String from, String to, Integer offset, Integer pageSize) {
-		// TODO Auto-generated method stub
-		return dayEVDao.selectFromTo(stcd, from, to, offset, pageSize);
-	}
-
-	@Override
-	public Long selectCount(String stcd, String from, String to) {
-		// TODO Auto-generated method stub
-		return dayEVDao.selectCount(stcd, from, to);
-	}
-
-	@Override
 	public Long selectCount(String from, String to) {
 		// TODO Auto-generated method stub
 		return dayEVDao.selectCount(from, to);
 	}
 
-	@Override
 	public List<DayEV> selectFromTo(String from, String to, Integer offset, Integer pageSize) {
 		// TODO Auto-generated method stub
 		return dayEVDao.selectFromTo(from, to, offset, pageSize);
+	}
+
+	public Long selectCount(String stcd, String from, String to) {
+		// TODO Auto-generated method stub
+		return dayEVDao.selectCount(stcd, from, to);
+	}
+
+	public List<DayEV> selectFromTo(String stcd, String from, String to, Integer offset, Integer pageSize) {
+		// TODO Auto-generated method stub
+		return dayEVDao.selectFromTo(stcd, from, to, offset, pageSize);
 	}
 }

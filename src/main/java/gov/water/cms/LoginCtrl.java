@@ -48,10 +48,10 @@ public class LoginCtrl {
 				
 				return "redirect:/cms/post";
 			}else{
-				error = "ÃÜÂë²»ÕıÈ·";
+				error = "å¯†ç ä¸æ­£ç¡®";
 			}
 		}else if( user_stcd != null ){
-			error = "ÓÃ»§²»´æÔÚ";
+			error = "ç”¨æˆ·åä¸å­˜åœ¨";
 		}
 		
 		if( error != null ){

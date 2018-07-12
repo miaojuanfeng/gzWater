@@ -19,10 +19,8 @@ public class UserServiceImpl implements UserService {
 		return userDao.selectByPrimaryKey(stcd);
 	}
 
-	@Override
 	public List<User> selectAll() {
 		// TODO Auto-generated method stub
 		return userDao.selectAll();
 	}
-
 }

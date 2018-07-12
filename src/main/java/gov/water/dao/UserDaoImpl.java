@@ -30,7 +30,6 @@ public class UserDaoImpl implements UserDao {
         return null;
 	}
 
-	@Override
 	public List<User> selectAll() {
 		// TODO Auto-generated method stub
 		String hql = "from User where type='s'";

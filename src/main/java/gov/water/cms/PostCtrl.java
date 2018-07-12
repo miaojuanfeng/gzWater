@@ -45,7 +45,7 @@ public class PostCtrl {
 		if( dayEV != null ){
 			model.addAttribute("dye", dayEV.getDye());
 		}else{
-			model.addAttribute("dye", "ÔİÎŞÊı¾İ");
+			model.addAttribute("dye", "æš‚æ— æ•°æ®");
 		}
 	}
 	
@@ -82,9 +82,9 @@ public class PostCtrl {
 		if( dayEV != null ){
 			dayEV.setDye(dye);
 			if( dayEVService.updateByPrimaryKey(dayEV) == 1 ){
-				error = "Õô·¢Á¿¸üĞÂ³É¹¦";
+				error = "è’¸å‘é‡æ›´æ–°æˆåŠŸ";
 			}else{
-				error = "Õô·¢Á¿¸üĞÂÊ§°Ü";
+				error = "è’¸å‘é‡æ›´æ–°å¤±è´¥";
 			}
 		}else{
 			dateStr += " 08:00:00.000";
@@ -98,9 +98,9 @@ public class PostCtrl {
 			dayEV.setDaypk(dayPK);
 			dayEV.setDye(dye);
 			if( dayEVService.insertByPrimaryKey(dayEV) == 1 ){
-				error = "Õô·¢Á¿±£´æ³É¹¦";
+				error = "è’¸å‘é‡ä¿å­˜æˆåŠŸ";
 			}else{
-				error = "Õô·¢Á¿±£´æÊ§°Ü";
+				error = "è’¸å‘é‡ä¿å­˜å¤±è´¥";
 			}
 		}
 		
