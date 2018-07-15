@@ -22,7 +22,7 @@ public class LoginCtrl {
 	@RequestMapping(value="login", method=RequestMethod.GET)
 	public String login(HttpSession httpSession) {
 		if( httpSession.getAttribute("user") != null ){
-			return "redirect:/cms/post";
+			return "redirect:/cms";
 		}
 		return "UserView";
 	}
@@ -35,7 +35,7 @@ public class LoginCtrl {
 			HttpSession httpSession
 	){
 		if( httpSession.getAttribute("user") != null ){
-			return "redirect:/cms/post";
+			return "redirect:/cms";
 		}
 		
 		String error = null;
@@ -46,7 +46,7 @@ public class LoginCtrl {
 			if( user.getPwd() != null && user_pwd.equals(user.getPwd()) ){
 				httpSession.setAttribute("user", user);
 				
-				return "redirect:/cms/post";
+				return "redirect:/cms";
 			}else{
 				error = "密码不正确";
 			}

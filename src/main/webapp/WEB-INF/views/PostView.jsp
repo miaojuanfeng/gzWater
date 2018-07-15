@@ -21,13 +21,10 @@
 							<h2 class="corpcolor-font"><span>导航菜单</span></h2>
 							<div class="row">
 								<div class="no-margin-top col-sm-6 col-xs-12">
-									<a class="btn btn-sm btn-primary" href="<c:url value="/cms/show"></c:url>">蒸发量查询</a>
+									<a class="btn btn-sm btn-primary" href="<c:url value="/cms"></c:url>">导航菜单</a>
 								</div>
-								<!-- div class="no-margin-top col-sm-6 col-xs-12">
-									<a class="btn btn-sm btn-primary" href="asd">蒸发量报送</a>
-								</div !-->
 								<div class="no-margin-top col-sm-6 col-xs-12">
-									<a class="btn btn-sm btn-primary" href="<c:url value="/cms/logout"></c:url>">退出登录</a>
+									<a class="btn btn-sm btn-primary" href="<c:url value="/cms/show"></c:url>">蒸发量查询</a>
 								</div>
 							</div>
 						</div>

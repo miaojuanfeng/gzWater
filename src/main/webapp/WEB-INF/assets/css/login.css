@@ -106,37 +106,30 @@ body{
 	text-align: right;
 	width:33.3%;
 }
-.login-area .flow-wrapper .tbody-station .th-date{
+.login-area .flow-wrapper .table-wrapper{
+	overflow: scroll;
+}
+.login-area .flow-wrapper .table-wrapper th{
+	white-space: nowrap;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.login-area .flow-wrapper .table-wrapper td{
+	white-space: nowrap;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.no-padding-left{
+	padding-left:0 !important;
+}
+.no-padding-right{
+	padding-right:0 !important;
+}
+.text-align-left{
 	text-align: left;
-	width:10%;
 }
-.login-area .flow-wrapper .tbody-station .th-time{
-	text-align: center;
-	width:10%;
-}
-.login-area .flow-wrapper .tbody-station .th-data{
-	text-align: center;
-	width:10%;
-}
-.login-area .show-wrapper .tbody-admin .th-stcd{
-	text-align: left;
-	width:25%;
-}
-.login-area .show-wrapper .tbody-admin .th-stnm{
-	text-align: center;
-	width:15%;
-}
-.login-area .show-wrapper .tbody-admin .th-date{
-	text-align: center;
-	width:30%;
-}
-.login-area .show-wrapper .tbody-admin .th-time{
-	text-align: center;
-	width:15%;
-}
-.login-area .show-wrapper .tbody-admin .th-data{
+.text-align-right{
 	text-align: right;
-	width:15%;
 }
 /* Michael.Miao */
 

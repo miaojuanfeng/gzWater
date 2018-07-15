@@ -21,14 +21,8 @@
 						<div class="fieldset show-wrapper">
 							<h2 class="corpcolor-font"><span>导航菜单</span></h2>
 							<div class="row">
-								<!-- div class="no-margin-top col-sm-4 col-xs-12">
-									<a class="btn btn-sm btn-primary" href="asd">è¸åéæ¥è¯¢</a>
-								</div-->
-								<div class="no-margin-top col-sm-6 col-xs-12">
-									<a class="btn btn-sm btn-primary" href="<c:url value="/cms/post"></c:url>">蒸发量报送</a>
-								</div>
-								<div class="no-margin-top col-sm-6 col-xs-12">
-									<a class="btn btn-sm btn-primary" href="<c:url value="/cms/logout"></c:url>">退出登录</a>
+								<div class="no-margin-top col-sm-12 col-xs-12">
+									<a class="btn btn-sm btn-primary" href="<c:url value="/cms"></c:url>">导航菜单</a>
 								</div>
 							</div>
 						</div>
@@ -43,57 +37,30 @@
 					<div class="content-column-area col-sm-12 col-xs-12">
 						<div class="fieldset show-wrapper flow-wrapper">
 							<h2 class="corpcolor-font"><span>日流量查询 - ${stnm}站</span></h2>
-							<form method="get">
-								<table>
-									<tbody>
-										<tr>
-											<td>
-												<span class="input-group date datetimepicker">
-													<input name="from" type="text" class="form-control input-sm date-mask valid" placeholder="开始日期 (YYYY-MM-DD)" value="${from}">
-													<span class="input-group-addon">
-														<span class="glyphicon glyphicon-calendar"></span>
-													</span>
-												</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<span class="input-group date datetimepicker">
-													<input name="to" type="text" class="form-control input-sm date-mask valid" placeholder="结束日期 (YYYY-MM-DD)" value="${to}">
-													<span class="input-group-addon">
-														<span class="glyphicon glyphicon-calendar"></span>
-													</span>
-												</span>
-											</td>
-										</tr>
-										<tr>
-											<td><button type="submit" class="btn-login btn btn-sm btn-primary pull-right"><i class="glyphicon glyphicon-send"></i> 查询</button></td>
-										</tr>
-									</tbody>
-								</table>
-							</form>
+							<%@ include file="inc/searchArea.jsp" %>
 							<hr>
 							<div>
+								<div class="table-wrapper">
 								<table class="table-striped">
 									<c:choose> 
 	     								<c:when test="${type == 's'}"> 
-											<tbody class="tbody-station">
+											<tbody>
 												<tr>
-													<th class="th-date">日期</th>
-													<th class="th-time">时间</th>
-													<th class="th-data">水位</th>
-													<th class="th-data">流量</th>
-													<th class="th-data">水势</th>
-													<th class="th-data">测流方法</th>
+													<th class="no-padding-left text-align-left">日期</th>
+													<th>时间</th>
+													<th>水位</th>
+													<th>流量</th>
+													<th>水势</th>
+													<th class="no-padding-right text-align-right">测流方法</th>
 												</tr>
 												<c:forEach items="${dayEVs}" var="item">
 												<tr>
-													<td class="th-date"><fmt:formatDate  value="${item.daypk.tm}"  pattern="yyyy-MM-dd" /></td>
+													<td class="no-padding-left text-align-left"><fmt:formatDate  value="${item.daypk.tm}"  pattern="yyyy-MM-dd" /></td>
 													<td class="th-time"><fmt:formatDate  value="${item.daypk.tm}"  pattern="HH:mm" /></td>
 													<td class="th-data">${item.z}</td>
+													<td class="th-data"><c:choose><c:when test="${item.q!=null}">${item.q}</c:when><c:otherwise>-</c:otherwise></c:choose></td>
 													<td class="th-data">${item.z}</td>
-													<td class="th-data">${item.z}</td>
-													<td class="th-data">${item.z}</td>
+													<td class="no-padding-right text-align-right">${item.z}</td>
 												</tr>
 												</c:forEach>
 												
@@ -105,27 +72,27 @@
 											</tbody>
 										</c:when>
 										<c:otherwise>   
-											<tbody class="tbody-admin">
+											<tbody>
 												<tr>
-													<th class="th-stcd">站码</th>
-													<th class="th-stnm">站名</th>
-													<th class="th-date">日期</th>
-													<th class="th-time">时间</th>
-													<th class="th-data">水位</th>
-													<th class="th-data">流量</th>
-													<th class="th-data">水势</th>
-													<th class="th-data">测流方法</th>
+													<th class="no-padding-left text-align-left">站码</th>
+													<th>站名</th>
+													<th>日期</th>
+													<th>时间</th>
+													<th>水位</th>
+													<th>流量</th>
+													<th>水势</th>
+													<th class="no-padding-right text-align-right">测流方法</th>
 												</tr>
 												<c:forEach items="${dayEVs}" var="item">
 												<tr>
-													<td class="th-stcd">${item.daypk.stcd}</td>
-													<td class="th-stnm">${stations[item.daypk.stcd]}</td>
-													<td class="th-date"><fmt:formatDate  value="${item.daypk.tm}"  pattern="yyyy-MM-dd" /></td>
-													<td class="th-time"><fmt:formatDate  value="${item.daypk.tm}"  pattern="HH:mm" /></td>
-													<td class="th-data">${item.z}</td>
-													<td class="th-data">${item.z}</td>
-													<td class="th-data">${item.z}</td>
-													<td class="th-data">${item.z}</td>
+													<td class="no-padding-left text-align-left">${item.daypk.stcd}</td>
+													<td>${stations[item.daypk.stcd]}</td>
+													<td><fmt:formatDate  value="${item.daypk.tm}"  pattern="yyyy-MM-dd" /></td>
+													<td><fmt:formatDate  value="${item.daypk.tm}"  pattern="HH:mm" /></td>
+													<td>${item.z}</td>
+													<td><c:choose><c:when test="${item.q!=null}">${item.q}</c:when><c:otherwise>-</c:otherwise></c:choose></td>
+													<td>${item.z}</td>
+													<td class="no-padding-right text-align-right">${item.z}</td>
 												</tr>
 												</c:forEach>
 												
@@ -138,28 +105,29 @@
 	  									</c:otherwise>
 									</c:choose>
 								</table>
+								</div>
 								<div class="page-area">
 										<span class="btn btn-sm btn-default">${totalRecord}</span>
 										<c:if test="${totalRecord > 0}">
 										<span class="pagination-area">
 											<c:if test="${page-1 > 1}">
-												<a href="<c:url value="/cms/show/1${parameters}"></c:url>" class="btn btn-sm btn-primary">&lt;&lt;</a>
+												<a href="<c:url value="/cms/flow/show/1${parameters}"></c:url>" class="btn btn-sm btn-primary">&lt;&lt;</a>
 											</c:if>
 											<c:if test="${page != 1}">
-												<a href="<c:url value="/cms/show/${page-1}${parameters}"></c:url>" class="btn btn-sm btn-primary">&lt;</a>
+												<a href="<c:url value="/cms/flow/show/${page-1}${parameters}"></c:url>" class="btn btn-sm btn-primary">&lt;</a>
 											</c:if>
 											<c:if test="${page-1 > 0}">
-												<a href="<c:url value="/cms/show/${page-1}${parameters}"></c:url>" class="btn btn-sm btn-primary">${page-1}</a>
+												<a href="<c:url value="/cms/flow/show/${page-1}${parameters}"></c:url>" class="btn btn-sm btn-primary">${page-1}</a>
 											</c:if>
-											<a href="<c:url value="/cms/show/${page}${parameters}"></c:url>" class="btn btn-sm btn-primary disabled">${page}</a>
+											<a href="<c:url value="/cms/flow/show/${page}${parameters}"></c:url>" class="btn btn-sm btn-primary disabled">${page}</a>
 											<c:if test="${page+1 <= totalPage}">
-												<a href="<c:url value="/cms/show/${page+1}${parameters}"></c:url>" class="btn btn-sm btn-primary">${page+1}</a>
+												<a href="<c:url value="/cms/flow/show/${page+1}${parameters}"></c:url>" class="btn btn-sm btn-primary">${page+1}</a>
 											</c:if>
 											<c:if test="${page != totalPage}">
-												<a href="<c:url value="/cms/show/${page+1}${parameters}"></c:url>" class="btn btn-sm btn-primary">&gt;</a>
+												<a href="<c:url value="/cms/flow/show/${page+1}${parameters}"></c:url>" class="btn btn-sm btn-primary">&gt;</a>
 											</c:if>
 											<c:if test="${page+1 < totalPage}">
-												<a href="<c:url value="/cms/show/${totalPage}${parameters}"></c:url>" class="btn btn-sm btn-primary">&gt;&gt;</a>
+												<a href="<c:url value="/cms/flow/show/${totalPage}${parameters}"></c:url>" class="btn btn-sm btn-primary">&gt;&gt;</a>
 											</c:if>
 										</span>
 										</c:if>
