@@ -38,25 +38,26 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
-						<div class="fieldset show-wrapper">
+						<div class="fieldset">
 							<h2 class="corpcolor-font"><span>日蒸发量查询 - ${stnm}站</span></h2>
 							<%@ include file="inc/searchArea.jsp" %>
-							<hr>
+							<hr class="margin-top-3 no-margin-bottom" />
 							<div>
+								<div class="table-wrapper">
 								<table class="table-striped">
 									<c:choose> 
 	     								<c:when test="${type == 's'}"> 
 											<tbody class="tbody-station">
 												<tr>
-													<th class="th-date">日期</th>
-													<th class="th-time">时间</th>
-													<th class="th-data">蒸发量</th>
+													<th class="no-padding-left text-align-left">日期</th>
+													<th>时间</th>
+													<th class="no-padding-right text-align-right">蒸发量</th>
 												</tr>
 												<c:forEach items="${dayEVs}" var="item">
 												<tr>
-													<td class="th-date"><fmt:formatDate  value="${item.daypk.tm}"  pattern="yyyy-MM-dd" /></td>
-													<td class="th-time"><fmt:formatDate  value="${item.daypk.tm}"  pattern="HH:mm" /></td>
-													<td class="th-data">${item.dye}</td>
+													<td class="no-padding-left text-align-left"><fmt:formatDate  value="${item.daypk.tm}"  pattern="yyyy-MM-dd" /></td>
+													<td><fmt:formatDate  value="${item.daypk.tm}"  pattern="HH:mm" /></td>
+													<td class="no-padding-right text-align-right">${item.dye}</td>
 												</tr>
 												</c:forEach>
 												
@@ -70,19 +71,19 @@
 										<c:otherwise>   
 											<tbody class="tbody-admin">
 												<tr>
-													<th class="th-stcd">站码</th>
+													<th class="no-padding-left text-align-left">站码</th>
 													<th class="th-stnm">站名</th>
 													<th class="th-date">日期</th>
 													<th class="th-time">时间</th>
-													<th class="th-data">蒸发量</th>
+													<th class="no-padding-right text-align-right">蒸发量</th>
 												</tr>
 												<c:forEach items="${dayEVs}" var="item">
 												<tr>
-													<td class="th-stcd">${item.daypk.stcd}</td>
+													<td class="no-padding-left text-align-left">${item.daypk.stcd}</td>
 													<td class="th-stnm">${stations[item.daypk.stcd]}</td>
 													<td class="th-date"><fmt:formatDate  value="${item.daypk.tm}"  pattern="yyyy-MM-dd" /></td>
 													<td class="th-time"><fmt:formatDate  value="${item.daypk.tm}"  pattern="HH:mm" /></td>
-													<td class="th-data">${item.dye}</td>
+													<td class="no-padding-right text-align-right">${item.dye}</td>
 												</tr>
 												</c:forEach>
 												
@@ -95,6 +96,7 @@
 	  									</c:otherwise>
 									</c:choose>
 								</table>
+								</div>
 								<div class="page-area">
 										<span class="btn btn-sm btn-default">${totalRecord}</span>
 										<c:if test="${totalRecord > 0}">

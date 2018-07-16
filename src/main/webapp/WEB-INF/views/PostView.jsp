@@ -17,7 +17,7 @@
 			<div class="container-fluid menu-wrapper">
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
-						<div class="fieldset show-wrapper">
+						<div class="fieldset">
 							<h2 class="corpcolor-font"><span>导航菜单</span></h2>
 							<div class="row">
 								<div class="no-margin-top col-sm-6 col-xs-12">

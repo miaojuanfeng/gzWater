@@ -53,9 +53,6 @@ body{
 	margin: 0;
 	padding: 0;
 }
-.no-margin-top{
-	margin-top: 0 !important;
-}
 .login-area{
 	display:none;
 }
@@ -67,54 +64,25 @@ body{
 	padding: 0 15px;
 	color:#337ab7;
 }
-.login-area .menu-wrapper{
-
-}
 .login-area .menu-wrapper a{
 	display: block;
 }
 .login-area .corpcolor-font{
 	font-size: 16px;
 }
-.login-area .post-wrapper{
-	/*height: auto;*/
-}
 .login-area .post-wrapper .yesterday-data{
 	font-size: 22px;
 	text-align: center;
 }
-.login-area .show-wrapper{
-	/*height: auto;*/
-}
-.login-area .show-wrapper hr{
-	margin-top:3px;
-	margin-bottom: 0;
-}
-.login-area .show-wrapper .tbody-station .th-date{
-	text-align: left;
-	width:33.3%;
-}
-.login-area .show-wrapper .tbody-station .th-time{
-	text-align: center;
-	width:33.3%;
-}
-.login-area .show-wrapper .tbody-station .th-data{
-	text-align: right;
-	width:33.3%;
-}
-.login-area .show-wrapper .tbody-station .th-data{
-	text-align: right;
-	width:33.3%;
-}
-.login-area .flow-wrapper .table-wrapper{
+.login-area .table-wrapper{
 	overflow: scroll;
 }
-.login-area .flow-wrapper .table-wrapper th{
+.login-area .table-wrapper th{
 	white-space: nowrap;
 	padding-left: 5px;
 	padding-right: 5px;
 }
-.login-area .flow-wrapper .table-wrapper td{
+.login-area .table-wrapper td{
 	white-space: nowrap;
 	padding-left: 5px;
 	padding-right: 5px;
@@ -130,6 +98,15 @@ body{
 }
 .text-align-right{
 	text-align: right;
+}
+.margin-top-3{
+	margin-top:3px;
+}
+.no-margin-top{
+	margin-top: 0 !important;
+}
+.no-margin-bottom{
+	margin-bottom: 0 !important;
 }
 /* Michael.Miao */
 

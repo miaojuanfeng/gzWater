@@ -35,10 +35,10 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
-						<div class="fieldset show-wrapper flow-wrapper">
+						<div class="fieldset">
 							<h2 class="corpcolor-font"><span>日流量查询 - ${stnm}站</span></h2>
 							<%@ include file="inc/searchArea.jsp" %>
-							<hr>
+							<hr class="margin-top-3 no-margin-bottom" />
 							<div>
 								<div class="table-wrapper">
 								<table class="table-striped">
