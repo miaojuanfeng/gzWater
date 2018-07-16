@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>蒸发量查询 - 赣州市水文局日蒸发量查询报送系统</title>
+		<title>${classTitle}${methodTitle} - 赣州市水文局${classTitle}查询报送系统</title>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -14,7 +14,7 @@
 
 	<body>
 		<div class="login-area">
-			<h2 class="title-wrapper"><span>赣州市水文局日蒸发量查询报送系统</span></h2>
+			<h2 class="title-wrapper"><span>赣州市水文局${classTitle}查询报送系统</span></h2>
 			<div class="container-fluid menu-wrapper">
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
@@ -24,9 +24,16 @@
 								<div class="no-margin-top col-sm-6 col-xs-12">
 									<a class="btn btn-sm btn-primary" href="<c:url value="/cms"></c:url>">导航菜单</a>
 								</div>
+								<c:if test="${method=='show'}">
 								<div class="no-margin-top col-sm-6 col-xs-12">
-									<a class="btn btn-sm btn-primary" href="<c:url value="/cms/post"></c:url>">蒸发量报送</a>
+									<a class="btn btn-sm btn-primary" href="<c:url value="/cms/dev/post"></c:url>">${classTitle}报送</a>
 								</div>
+								</c:if>
+								<c:if test="${method=='post'}">
+								<div class="no-margin-top col-sm-6 col-xs-12">
+									<a class="btn btn-sm btn-primary" href="<c:url value="/cms/dev/show"></c:url>">${classTitle}查询</a>
+								</div>
+								</c:if>
 							</div>
 						</div>
 					</div>
@@ -38,8 +45,9 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="content-column-area col-sm-12 col-xs-12">
+						<c:if test="${method=='show'}">
 						<div class="fieldset">
-							<h2 class="corpcolor-font"><span>日蒸发量查询 - ${stnm}站</span></h2>
+							<h2 class="corpcolor-font"><span>${classTitle}查询 - ${stnm}站</span></h2>
 							<%@ include file="inc/searchArea.jsp" %>
 							<hr class="margin-top-3 no-margin-bottom" />
 							<div>
@@ -102,30 +110,61 @@
 										<c:if test="${totalRecord > 0}">
 										<span class="pagination-area">
 											<c:if test="${page-1 > 1}">
-												<a href="<c:url value="/cms/show/1${parameters}"></c:url>" class="btn btn-sm btn-primary">&lt;&lt;</a>
+												<a href="<c:url value="/cms/dev/show/1${parameters}"></c:url>" class="btn btn-sm btn-primary">&lt;&lt;</a>
 											</c:if>
 											<c:if test="${page != 1}">
-												<a href="<c:url value="/cms/show/${page-1}${parameters}"></c:url>" class="btn btn-sm btn-primary">&lt;</a>
+												<a href="<c:url value="/cms/dev/show/${page-1}${parameters}"></c:url>" class="btn btn-sm btn-primary">&lt;</a>
 											</c:if>
 											<c:if test="${page-1 > 0}">
-												<a href="<c:url value="/cms/show/${page-1}${parameters}"></c:url>" class="btn btn-sm btn-primary">${page-1}</a>
+												<a href="<c:url value="/cms/dev/show/${page-1}${parameters}"></c:url>" class="btn btn-sm btn-primary">${page-1}</a>
 											</c:if>
-											<a href="<c:url value="/cms/show/${page}${parameters}"></c:url>" class="btn btn-sm btn-primary disabled">${page}</a>
+											<a href="<c:url value="/cms/dev/show/${page}${parameters}"></c:url>" class="btn btn-sm btn-primary disabled">${page}</a>
 											<c:if test="${page+1 <= totalPage}">
-												<a href="<c:url value="/cms/show/${page+1}${parameters}"></c:url>" class="btn btn-sm btn-primary">${page+1}</a>
+												<a href="<c:url value="/cms/dev/show/${page+1}${parameters}"></c:url>" class="btn btn-sm btn-primary">${page+1}</a>
 											</c:if>
 											<c:if test="${page != totalPage}">
-												<a href="<c:url value="/cms/show/${page+1}${parameters}"></c:url>" class="btn btn-sm btn-primary">&gt;</a>
+												<a href="<c:url value="/cms/dev/show/${page+1}${parameters}"></c:url>" class="btn btn-sm btn-primary">&gt;</a>
 											</c:if>
 											<c:if test="${page+1 < totalPage}">
-												<a href="<c:url value="/cms/show/${totalPage}${parameters}"></c:url>" class="btn btn-sm btn-primary">&gt;&gt;</a>
+												<a href="<c:url value="/cms/dev/show/${totalPage}${parameters}"></c:url>" class="btn btn-sm btn-primary">&gt;&gt;</a>
 											</c:if>
 										</span>
 										</c:if>
 									</div>
 							</div>
 						</div>
-
+						</c:if>
+						<c:if test="${method=='post'}">
+						<div class="fieldset post-wrapper">
+							<h2 class="corpcolor-font"><span>${classTitle}报送 - ${stnm}站</span></h2>
+							<form method="post">
+								<table>
+									<tbody>
+										<tr>
+											<td>前日蒸发量</td>
+										</tr>
+										<tr>
+											<td class="yesterday-data">${dye}</td>
+										</tr>
+										<c:if test="${type == 's'}">
+										<tr>
+											<td>昨日蒸发量</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="hidden" name="stcd" value="${stcd}" />
+												<input type="number" min="0" step="0.1" name="dye" class="form-control input-sm required" placeholder="昨日蒸发量" />
+											</td>
+										</tr>
+										<tr>
+											<td><button type="submit" class="btn-login btn btn-sm btn-primary pull-right"><i class="glyphicon glyphicon-send"></i> 提交</button></td>
+										</tr>
+										</c:if>
+									</tbody>
+								</table>
+							</form>
+						</div>
+						</c:if>
 					</div>
 				</div>
 			</div>

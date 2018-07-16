@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import gov.water.model.River;
 import gov.water.model.User;
-import gov.water.service.RiverService;
+import gov.water.service.FlowService;
 import gov.water.service.UserService;
 import gov.water.util.FuncUtil;
 

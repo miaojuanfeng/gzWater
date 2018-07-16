@@ -17,16 +17,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import gov.water.model.River;
 import gov.water.model.User;
-import gov.water.service.RiverService;
+import gov.water.service.FlowService;
 import gov.water.service.UserService;
 import gov.water.util.FuncUtil;
 
 @Controller
 @RequestMapping("cms/flow")
-public class RiverCtrl {
+public class FlowCtrl {
 	
 	@Autowired
-	private RiverService riverService;
+	private FlowService flowService;
 	
 	@Autowired
 	private UserService userService;
@@ -79,9 +79,9 @@ public class RiverCtrl {
 		int pageSize = 20;
 		long totalRecord = 0;
 		if( type.equals("s") ){
-			totalRecord = riverService.selectCount(stcd, from, to);
+			totalRecord = flowService.selectCount(stcd, from, to);
 		}else{
-			totalRecord = riverService.selectCount(from, to);
+			totalRecord = flowService.selectCount(from, to);
 		}
 		int totalPage = (int)Math.ceil((double)totalRecord/pageSize);
 		
@@ -92,9 +92,9 @@ public class RiverCtrl {
 		Integer offset = (page-1)*pageSize;
 		List<River> rivers = null;
 		if( type.equals("s") ){
-			rivers = riverService.selectFromTo(stcd, from, to, offset, pageSize);
+			rivers = flowService.selectFromTo(stcd, from, to, offset, pageSize);
 		}else{
-			rivers = riverService.selectFromTo(from, to, offset, pageSize);
+			rivers = flowService.selectFromTo(from, to, offset, pageSize);
 		}
 		
 		Map<String, String> stations = new HashMap<String, String>();
@@ -110,6 +110,6 @@ public class RiverCtrl {
 		model.addAttribute("stations", stations);
 		model.addAttribute("parameters", funcUtil.requestParameters(request));
 		
-		return "RiverView";
+		return "FlowView";
 	}
 }

@@ -21,7 +21,7 @@
 							<h2 class="corpcolor-font"><span>导航菜单</span></h2>
 							<div class="row">
 								<div class="no-margin-top col-sm-12 col-xs-12">
-									<a class="btn btn-sm btn-primary" href="<c:url value="/cms/post"></c:url>">蒸发量报送</a>
+									<a class="btn btn-sm btn-primary" href="<c:url value="/cms/dev/post"></c:url>">日蒸发量报送</a>
 								</div>
 								<div class="col-sm-12 col-xs-12">
 									<a class="btn btn-sm btn-primary" href="<c:url value="/cms/flow/show"></c:url>">流量报送</a>

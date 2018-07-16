@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import gov.water.model.River;
 
 @Repository
-public class RiverDaoImpl implements RiverDao{
+public class FlowDaoImpl implements FlowDao{
 
 	@Autowired
     private SessionFactory sessionFactory;
